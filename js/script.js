@@ -2,6 +2,23 @@
 
   "use strict";
 
+    // Auto-resize all textareas based on content
+    function autoResizeTextarea(textarea) {
+      textarea.style.height = '50px'; // match input height
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    document.addEventListener('input', function(e) {
+      if (e.target.tagName === 'TEXTAREA') {
+        autoResizeTextarea(e.target);
+      }
+    });
+
+    // Initialize on page load for pre-filled textareas
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('textarea').forEach(autoResizeTextarea);
+    });
+
   // Responsive Navigation with Button
   // var initHamburgerMenu = function() {
   //   const hamburger = document.querySelector(".hamburger");

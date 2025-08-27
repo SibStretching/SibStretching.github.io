@@ -746,9 +746,17 @@ textarea {
 }
 
 textarea {
-  min-height: 130px;
+  min-height: 65px;
   padding-top: 6px;
   padding-bottom: 6px;
+  border-radius: 30px;
+  text-align: center;
+  border-color: transparent;
+
+}
+
+textarea::placeholder {
+  text-align: center;
 }
 
 input[type="email"]:focus,
@@ -758,7 +766,10 @@ input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
-textarea:focus,
+textarea:focus {
+  border: none;
+  outline: 0;
+}
 select:focus {
   border: 1px solid var(--grey-color);
   outline: 0;
